@@ -11,12 +11,12 @@ class FilmTile extends React.Component {
 	componentDidMount() {
 		try {
 			fetch(this.props.film)
-					.then(res => res.json())
-					.then((data => {
-					this.setState({ 
-							filmData: data,
-					});
-				}));
+				.then(res => res.json())
+				.then((data => {
+				this.setState({ 
+						filmData: data,
+				});
+			}));
 		}
 		catch(error) {
 			console.log(error);
@@ -32,12 +32,16 @@ class FilmTile extends React.Component {
 	render() {
 		const { filmData } = this.state;
 		return (
-			<div className='filmTile'>
-				<h3>{filmData.title} : Episode {filmData.episode_id}</h3>
-				<h4>Directed by: {filmData.director}</h4>
-				<h4>Released on: {this.formatDate(filmData.release_date)}</h4>
+			<div className="column">
+				<div className='filmTile'>
+					<h3>{filmData.title} : Episode {filmData.episode_id}</h3>
+					<div className="filmDetails">
+						<p>Directed by:</p><h4>{filmData.director}</h4>
+						<p>Released on:</p><h4>{!filmData.release_date ? '-' 
+							: this.formatDate(filmData.release_date)}</h4>
+					</div>
+				</div>
 			</div>
-	)};
+		)}
 }
-
 export default FilmTile;

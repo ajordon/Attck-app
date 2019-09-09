@@ -9,9 +9,9 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <body>
+      <div className='body'>
         <CharacterSearch />
-      </body>
+      </div>
     </div>
   );
 }

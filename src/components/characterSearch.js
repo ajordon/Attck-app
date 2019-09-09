@@ -1,5 +1,5 @@
 import React from 'react';
-import NameBox from './namebox';
+import NameBox from './nameBox';
 import FilmTile from './filmTile';
 
 class CharacterSearch extends React.Component {
@@ -24,7 +24,6 @@ class CharacterSearch extends React.Component {
 
     handleSubmit(person) {
 			const BASE_URL = "https://swapi.co/api/people/";
-
 			try {
 				fetch(BASE_URL + person)
 					.then(res => res.json())
@@ -45,7 +44,7 @@ class CharacterSearch extends React.Component {
 			return(
 				<div className='content'>
 					<h3>Choose a character to retrieve their film list: </h3>
-					<form classname="btn-group">
+					<form className="btn-group">
 						<NameBox handleClick={this.handleChange} name='Luke Skywalker' value='1' />
 						<NameBox handleClick={this.handleChange} name='Darth Vader' value='4'/>
 						<NameBox handleClick={this.handleChange} name='Obi-wan Kenobi'  value='10'/>
