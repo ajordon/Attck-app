@@ -30,10 +30,10 @@ class FilmTile extends React.Component {
 	}
 
 	render() {
-		const { filmData } = this.state;
+		const { filmData, key } = this.state;
 		return (
 			<div className="column">
-				<div className='filmTile'>
+				<div className='filmTile' key={key}>
 					<h3>{filmData.title} : Episode {filmData.episode_id}</h3>
 					<div className="filmDetails">
 						<p>Directed by:</p><h4>{filmData.director}</h4>

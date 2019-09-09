@@ -54,7 +54,7 @@ class CharacterSearch extends React.Component {
 					<h4>Results for: {selectedCharacter}</h4>
 					<div className="results-table">
 						{!results ? <>{errors}</>
-						: results.map((film) => <FilmTile film={film} key={film.id} />)}
+						: results.map((film, i) => <FilmTile film={film} key={i} />)}
 					</div>
 				</div>
 			);
