@@ -6,10 +6,11 @@ class CharacterSearch extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedCharacter: '',
-            errors: '',
-            results: [],
-        };
+					selectedCharacter: '',
+					errors: '',
+					results: [],
+					isLoaded: true
+				};
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);    
@@ -18,7 +19,7 @@ class CharacterSearch extends React.Component {
     handleChange(e) {
 			e.preventDefault();
 			const value = e.target.value;			
-			this.setState({selectedCharacter: e.target.name, results: []});
+			this.setState({selectedCharacter: e.target.name, results: [], isLoaded: false});
 			this.handleSubmit(value);
     }
 
@@ -30,6 +31,7 @@ class CharacterSearch extends React.Component {
 					.then((data => {
 						this.setState({ 
 							results: data.films,
+							isLoaded: true,
 						});
 				}));
 			}
@@ -39,8 +41,13 @@ class CharacterSearch extends React.Component {
 			}
 		}
 
+		handleResults() {
+			return !this.state.results ? <></>
+				: <div class="lds-dual-ring"></div>
+		}
+
 		render() {
-			const { results, selectedCharacter, errors } = this.state;
+			const { results, selectedCharacter, isLoaded } = this.state;
 			return(
 				<div className='content'>
 					<h3>Choose a character to retrieve their film list: </h3>
@@ -53,8 +60,8 @@ class CharacterSearch extends React.Component {
 					<hr />
 					<h4>Results for: {selectedCharacter}</h4>
 					<div className="results-table">
-						{!results ? <>{errors}</>
-						: results.map((film, i) => <FilmTile film={film} key={i} />)}
+						{isLoaded ? results.map((film, i) => <FilmTile film={film} key={i} />)
+						: this.handleResults()}
 					</div>
 				</div>
 			);
