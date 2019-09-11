@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Attck-app/static/css/main.266bad16.chunk.css",
+    "main.js": "/Attck-app/static/js/main.1cbd64a2.chunk.js",
+    "main.js.map": "/Attck-app/static/js/main.1cbd64a2.chunk.js.map",
+    "runtime~main.js": "/Attck-app/static/js/runtime~main.13d15cd9.js",
+    "runtime~main.js.map": "/Attck-app/static/js/runtime~main.13d15cd9.js.map",
+    "static/js/2.632e02ad.chunk.js": "/Attck-app/static/js/2.632e02ad.chunk.js",
+    "static/js/2.632e02ad.chunk.js.map": "/Attck-app/static/js/2.632e02ad.chunk.js.map",
+    "index.html": "/Attck-app/index.html",
+    "precache-manifest.be26aaac5d12ba458efbf2e267659c1e.js": "/Attck-app/precache-manifest.be26aaac5d12ba458efbf2e267659c1e.js",
+    "service-worker.js": "/Attck-app/service-worker.js",
+    "static/css/main.266bad16.chunk.css.map": "/Attck-app/static/css/main.266bad16.chunk.css.map",
+    "static/media/starwars.png": "/Attck-app/static/media/starwars.78ea37bf.png"
+  }
+}
